@@ -1,2 +1,5 @@
 Iniciar Xampp
 sudo /opt/lampp/lampp start
+
+Atalho Identar Sublime
+{"keys": ["alt+shift+f"], "command": "reindent", "args": {"single_line": false}}
