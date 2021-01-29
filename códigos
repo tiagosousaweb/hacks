@@ -3,3 +3,5 @@ sudo /opt/lampp/lampp start
 
 Atalho Identar Sublime
 {"keys": ["alt+shift+f"], "command": "reindent", "args": {"single_line": false}}
+
+Chave Akismet: f66391426add
