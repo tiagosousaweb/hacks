@@ -1,7 +1,21 @@
-Iniciar Xampp
-sudo /opt/lampp/lampp start
+Parar Glasfish
+fuser -k 8080/tcp; fuser -k 4848/tcp;
 
 Atalho Identar Sublime
 {"keys": ["alt+shift+f"], "command": "reindent", "args": {"single_line": false}}
 
 Chave Akismet: f66391426add
+
+Excluir database:
+https://www.postgresqltutorial.com/postgresql-drop-database/
+
+SELECT
+	pg_terminate_backend (pg_stat_activity.pid)
+FROM
+	pg_stat_activity
+WHERE
+	pg_stat_activity.datname = 'testdb1';
+	
+	
+	
+DROP DATABASE testdb1;
