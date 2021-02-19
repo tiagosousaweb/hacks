@@ -18,7 +18,8 @@ Algoritmo de Síntese: MD5
  
 Algoritmo de Criptografia de Senha: MD5
  
-## Chave Akismet: f66391426add
+## Chave Akismet: 
+f66391426add
 
 ## Excluir database:
 https://www.postgresqltutorial.com/postgresql-drop-database/
