@@ -21,8 +21,12 @@ Nome JNDI: jdbc/notario
 Nome do Pool: notarioPool
 
 
-## Contexto do JAAS: jdbcRealm
- 
+## Novo Realm
+
+Nome: notarioRealm
+
+Contexto do JAAS: jdbcRealm
+  
 JNDI: jdbc/notario
  
 Tabela de Usuários: v_usuario_grupo
