@@ -1,14 +1,14 @@
 ## Config Notário:
 
-Contexto do JAAS: jdbcRealm
-JNDI: jdbc/notario
-Tabela de Usuários: v_usuario_grupo
-Coluna de Nomes de Usuários: username
-Coluna de Senhas: senha
-Tabela de Grupo: v_usuario_grupo
-Coluna de Nomes de Grupos: grupo
-Algoritmo de Síntese: MD5
-Algoritmo de Criptografia de Senha: MD5
+ Contexto do JAAS: jdbcRealm
+ JNDI: jdbc/notario
+ Tabela de Usuários: v_usuario_grupo
+ Coluna de Nomes de Usuários: username
+ Coluna de Senhas: senha
+ Tabela de Grupo: v_usuario_grupo
+ Coluna de Nomes de Grupos: grupo
+ Algoritmo de Síntese: MD5
+ Algoritmo de Criptografia de Senha: MD5
 
 
 `Chave Akismet: f66391426add`
