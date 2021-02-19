@@ -1,6 +1,6 @@
 ## Config Notário:
 
-`Contexto do JAAS: jdbcRealm
+Contexto do JAAS: jdbcRealm
  
 JNDI: jdbc/notario
  
@@ -16,7 +16,7 @@ Coluna de Nomes de Grupos: grupo
  
 Algoritmo de Síntese: MD5
  
-Algoritmo de Criptografia de Senha: MD5`
+Algoritmo de Criptografia de Senha: MD5
  
 Chave Akismet: f66391426add
 
