@@ -1,6 +1,27 @@
 ## Config Notário:
 
-Contexto do JAAS: jdbcRealm
+## Pools de Conexões do JDBC
+
+Nome do Pool: notarioPool
+
+User: postgres
+
+DatabaseName: notario
+
+Password: fxiladmin
+
+ServerName: localhost
+
+PortNumber: 5432
+
+## Recursos do JDBC
+
+Nome JNDI: jdbc/notario
+
+Nome do Pool: notarioPool
+
+
+## Contexto do JAAS: jdbcRealm
  
 JNDI: jdbc/notario
  
