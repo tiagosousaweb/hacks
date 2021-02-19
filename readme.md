@@ -1,7 +1,7 @@
 ##Config Notário:##
 
 `
-Contexto do JAAS: jdbcRealm
+Contexto do JAAS: jdbcRealm \n
 JNDI: jdbc/notario
 Tabela de Usuários: v_usuario_grupo
 Coluna de Nomes de Usuários: username
