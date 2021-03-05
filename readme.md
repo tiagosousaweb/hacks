@@ -105,13 +105,16 @@ Step 3: Connecting to PostgreSQL
 1. Download tar ball and move to /usr/lib
 
 2.Update your java laternatives using below scripts
+
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/java/jdk1.7.0_65/bin/java" 1
+
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk1.7.0_65/bin/javac" 1
+
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/java/jdk1.7.0_65/bin/javaws" 1
 
 3. Update your ~/.bashrc file
 
-##add​ these
+##add these
 
 export JAVA_HOME=/usr/lib/java/jdk1.8.0_77
 
