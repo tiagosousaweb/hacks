@@ -112,7 +112,7 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk1.
 
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/java/jdk1.7.0_65/bin/javaws" 1
 
-3. Update your ~/.bashrc file
+3. Update your ~/.bashrc file (sudo gedit ~/.bashrc)
 
 ##add these
 
@@ -129,5 +129,9 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 
 sudo apt-get install oracle-java8-installer
+
+
+
+
 
 Win7 Professional Versão PTBR - X17-59247
