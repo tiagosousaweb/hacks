@@ -34,5 +34,6 @@ su postgres
 logar com a senha alterada anteriormente
 
 Comando para alterar a senha sem precisar entrar no psql do Postgres
+
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 
