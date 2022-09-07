@@ -24,3 +24,15 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 ### Start database server PostgreSql
 
 > pg_ctlcluster 12 main start
+
+## Alterar senha master PostgreSql 12
+
+sudo passwd postgres
+informe a nova senha
+
+su postgres
+logar com a senha alterada anteriormente
+
+Comando para alterar a senha sem precisar entrar no psql do Postgres
+psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
+
