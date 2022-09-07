@@ -28,9 +28,11 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 ## Alterar senha master PostgreSql 12
 
 sudo passwd postgres
+
 informe a nova senha
 
 su postgres
+
 logar com a senha alterada anteriormente
 
 Comando para alterar a senha sem precisar entrar no psql do Postgres
