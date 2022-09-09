@@ -1,4 +1,4 @@
-# Excluir database:
+## Excluir database:
 https://www.postgresqltutorial.com/postgresql-drop-database/
 
 ```
@@ -13,7 +13,7 @@ WHERE
 DROP DATABASE testdb1;
 ```
 
-# Instalar PostgreSql 12 no Linux
+## Instalar PostgreSql 12 no Linux
 
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -; sudo apt-get update -u; sudo apt-get -y install postgresql-12
@@ -21,11 +21,11 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 
 *Só copiar e colar no terminal*
 
-# Start database server PostgreSql
+## Start database server PostgreSql
 
 > pg_ctlcluster 12 main start
 
-# Alterar senha master PostgreSql 12
+## Alterar senha master PostgreSql 12
 
 > sudo passwd postgres
 
@@ -35,10 +35,10 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 
 *logar com a senha alterada anteriormente*
 
-# Comando para alterar a senha sem precisar entrar no psql do Postgres
+## Comando para alterar a senha sem precisar entrar no psql do Postgres
 
 > psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 
-# Limpar cache do Git para fazer funcionar o gitignore
+## Limpar cache do Git para fazer funcionar o gitignore
 
 > git rm -r --cached . && git add . && git commit -m ".gitignore fix"
