@@ -39,3 +39,6 @@ Comando para alterar a senha sem precisar entrar no psql do Postgres
 
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 
+## Limpar cache do Git para fazer funcionar o gitignore
+
+git rm -r --cached . && git add . && git commit -m ".gitignore fix"
