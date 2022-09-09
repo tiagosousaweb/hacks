@@ -42,3 +42,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 ## Limpar cache do Git para fazer funcionar o gitignore
 
 > git rm -r --cached . && git add . && git commit -m ".gitignore fix"
+
+## Java rodando em segundo plano mesmo fechando o terminal do servidor
+
+> nohup java -jar app-0.0.1-SNAPSHOT.jar &
