@@ -23,26 +23,29 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 
 ## Start database server PostgreSql
 
-> pg_ctlcluster 12 main start
+```
+pg_ctlcluster 12 main start
+```
 
 ## Alterar senha master PostgreSql 12
-
-> sudo passwd postgres
-
+```
+sudo passwd postgres
+```
 *informe a nova senha*
-
-> su postgres
-
+```
+su postgres
+```
 *logar com a senha alterada anteriormente*
 
 ## Comando para alterar a senha sem precisar entrar no psql do Postgres
-
-> psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
-
+```
+psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
+```
 ## Limpar cache do Git para fazer funcionar o gitignore
-
-> git rm -r --cached . && git add . && git commit -m ".gitignore fix"
-
-## Java rodando em segundo plano mesmo fechando o terminal do servidor
-
-> nohup java -jar app-0.0.1-SNAPSHOT.jar &
+```
+git rm -r --cached . && git add . && git commit -m ".gitignore fix"
+```
+## Deixar o java rodando em segundo plano mesmo fechando o terminal do servidor
+```
+nohup java -jar app-0.0.1-SNAPSHOT.jar &
+```
