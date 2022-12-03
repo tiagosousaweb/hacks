@@ -37,7 +37,7 @@ su postgres
 ```
 *logar com a senha alterada anteriormente*
 
-```
+
 ## Limpar cache do Git para fazer funcionar o gitignore
 ```
 git rm -r --cached . && git add . && git commit -m ".gitignore fix"
@@ -48,11 +48,9 @@ nohup java -jar app-0.0.1-SNAPSHOT.jar &
 ```
 ## Senha como argumento em comando no terminal do linux
 ```
-```
 #!/bin/bash
 
 echo 'SUA_SENHA' | sudo -S COMANDO_AQUI
-
 ```
 *A parte #!/bin/bash é somente para quando o comando for colocado dentro de um arquivo .sh*
 
