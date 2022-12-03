@@ -48,6 +48,7 @@ nohup java -jar app-0.0.1-SNAPSHOT.jar &
 ```
 ## Senha como argumento em comando no terminal do linux
 ```
+```
 #!/bin/bash
 
 echo 'SUA_SENHA' | sudo -S COMANDO_AQUI
