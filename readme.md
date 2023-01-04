@@ -28,6 +28,7 @@ pg_ctlcluster 12 main start
 ```
 
 ## Alterar senha master PostgreSql 12
+*Logar como sudo no postgres*
 ```
 sudo passwd postgres
 ```
@@ -37,7 +38,8 @@ su postgres
 ```
 *logar com a senha alterada anteriormente*
 
-*Comando para alterar a senha*
+## Alterar senha de conexão PostgreSql 12
+
 ```
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
