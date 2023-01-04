@@ -37,6 +37,10 @@ su postgres
 ```
 *logar com a senha alterada anteriormente*
 
+*Comando para alterar a senha*
+```
+psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
+```
 
 ## Limpar cache do Git para fazer funcionar o gitignore
 ```
