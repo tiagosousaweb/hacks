@@ -60,3 +60,12 @@ echo 'SUA_SENHA' | sudo -S COMANDO_AQUI
 ```
 *A parte #!/bin/bash é somente para quando o comando for colocado dentro de um arquivo .sh*
 
+## Atualizar driver's Linux
+```
+sudo pkcon update && apt upgrade
+
+sudo pkcon install linux-headers-$(uname -r) build-essential
+
+sudo apt install broadcom-sta-dkms
+```
+
