@@ -69,3 +69,12 @@ sudo pkcon install linux-headers-$(uname -r) build-essential
 sudo apt install broadcom-sta-dkms
 ```
 
+## Remover programa instalado via arquivo .DEB no Linux
+Salvar os nomes de todos os programas no arquivo lista.txt na pasta /opt/
+```
+sudo dpkg -l > /opt/lista.txt
+```
+Procurar pelo nome do programa e depois executar:
+```
+sudo dkpg -P nome-do-programa
+```
