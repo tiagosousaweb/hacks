@@ -26,6 +26,10 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 ```
 pg_ctlcluster 12 main start
 ```
+ou
+```
+sudo systemctl start postgresql@12-main
+```
 
 ## Alterar senha master PostgreSql 12
 *Logar como sudo no postgres*
