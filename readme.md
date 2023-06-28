@@ -82,3 +82,46 @@ Procurar pelo nome do programa e depois executar:
 ```
 sudo dkpg -P nome-do-programa
 ```
+
+## Para instalar e reiniciar o MySQL no Ubuntu, você pode seguir estas etapas:
+
+sudo apt-get update
+sudo apt-get install mysql-server
+
+Configuração do MySQL:
+
+sudo systemctl status mysql
+
+## Reiniciar o serviço do MySQL:
+
+sudo systemctl restart mysql
+
+
+## Definir uma senha para o usuário root do MySQL
+sudo mysql
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nova_senha';
+
+FLUSH PRIVILEGES;
+
+
+## Caso dê erro ao iniciar o MySQL
+Verifique se há algum processo relacionado ao MySQL em execução usando o seguinte comando:
+sudo lsof -i :3306
+sudo reboot
+
+Após reiniciar o sistema, tente iniciar o serviço MySQL usando o comando 'sudo systemctl start mysql' novamente.
+
+
+## Para restaurar a base digite:
+mysql -u nome_de_usuario -p nome_do_banco_de_dados < /path/to/backup.sql
+
+Caso não dê certo, executar os comandos abaixo:
+mysql -u nome_do_usuario -p
+
+CREATE DATABASE nome_da_base;
+
+USE nome_da_base;
+
+SOURCE /caminho/para/backup_geral.sql;
+
