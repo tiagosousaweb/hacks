@@ -125,3 +125,36 @@ USE nome_da_base;
 
 SOURCE /caminho/para/backup_geral.sql;
 
+## Colocar certificado autoassinado no Spring Boot
+Gere um certificado autoassinado:
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/server.key -out /opt/server.crt
+```
+
+Crie o arquivo PKCS12 que irá para o application.properties:
+```
+openssl pkcs12 -export -in /opt/server.crt -inkey /opt/server.key -out /opt/server.p12 -name server
+```
+
+Verifique o conteúdo do keystore:
+Verifique o conteúdo do arquivo PKCS12 usando o comando keytool (ferramenta Java para gerenciar keystores):
+```
+keytool -list -keystore /opt/server.p12 -storetype PKCS12
+```
+Isso listará todas as entradas (certificados e chaves) no keystore. Verifique se o alias "server" está presente na lista.
+
+
+...Coloque uma senha de exportação
+
+Coloque isso no application.properties:
+```
+server.ssl.enabled=true
+server.ssl.key-store=/opt/server.p12
+server.ssl.key-store-password=senha-do-keystore
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=server
+```
+
+
+
+
