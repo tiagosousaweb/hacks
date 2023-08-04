@@ -155,7 +155,7 @@ server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=server
 ```
 
-Extrair XWSD em Classes:
+# Extrair XSD em Classes:
 ```
 xjc -wsdl https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
 ```
