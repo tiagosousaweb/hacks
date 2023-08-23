@@ -24,7 +24,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 ## Start database server PostgreSql
 
 ```
-pg_ctlcluster 12 main start
+sudo pg_ctlcluster 12 main start
 ```
 ou
 ```
