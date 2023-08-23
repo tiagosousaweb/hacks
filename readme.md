@@ -163,7 +163,20 @@ Caso queira criar um pacote específico:
 ```
 xjc -wsdl -p br.com.teste https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
 ```
-
+# Criar chave SSH git
+```
+ssh-keygen -t ed25519 -b 4096 -C "{username@emaildomain.com}" -f {ssh-key-name}
+```
+depois execute...
+```
+ssh-add ~/{ssh-key-name}
+```
+Coloque no arquivo config que está na pasta ~/.ssh o conteúdo abaixo. Se o arquivo nao existir, crie-o
+```
+Host bitbucket.org
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/{ssh-key-name}
+```
 
 
 
