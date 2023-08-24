@@ -175,7 +175,7 @@ Coloque no arquivo config que está na pasta ~/.ssh o conteúdo abaixo. Se o arq
 ```
 Host bitbucket.org
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/{ssh-key-name}
+  IdentityFile ~/{ssh-key-name}
 ```
 
 
