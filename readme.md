@@ -125,7 +125,20 @@ USE nome_da_base;
 
 SOURCE /caminho/para/backup_geral.sql;
 
+# Como criar um certificado para um domónio usando certbot
+
+Crie o certificado manualmente:
+```
+sudo certbot certonly --manual --preferred-challenges http -d MEUSITE.COM.BR
+```
+
+Converta o certificado em chave .p12
+```
+openssl pkcs12 -export -out /opt/certificado.p12 -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -in /etc/letsencrypt/live/MEUSITE.COM.BR/fullchain.pem
+```
+
 ## Colocar certificado autoassinado no Spring Boot
+
 Gere um certificado autoassinado:
 ```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/server.key -out /opt/server.crt
