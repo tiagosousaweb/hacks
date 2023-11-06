@@ -125,7 +125,7 @@ USE nome_da_base;
 
 SOURCE /caminho/para/backup_geral.sql;
 
-# Como criar um certificado para um domónio usando certbot
+## Como criar um certificado para um domónio usando certbot
 
 Crie o certificado manualmente:
 ```
