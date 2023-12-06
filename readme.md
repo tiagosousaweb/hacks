@@ -192,5 +192,5 @@ Host bitbucket.org
 ```
 # Exclusão com busca no Linux
 ```
-find . -name "*.txt" -type f -exec rm {} \;
+find . -name "*NOME_OU_EXTENSAO_DO_ARQUIVO" -type f -exec rm {} \;
 ```
