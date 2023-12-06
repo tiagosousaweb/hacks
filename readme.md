@@ -191,6 +191,6 @@ Host bitbucket.org
   IdentityFile ~/{ssh-key-name}
 ```
 # Exclusão com busca no Linux
-´´´
+```
 find . -name "*.txt" -type f -exec rm {} \;
-´´´
+```
