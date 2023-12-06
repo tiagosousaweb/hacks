@@ -190,7 +190,7 @@ Host bitbucket.org
   AddKeysToAgent yes
   IdentityFile ~/{ssh-key-name}
 ```
-
-
-
-
+# Exclusão com busca no Linux
+´´´
+find . -name "*.txt" -type f -exec rm {} \;
+´´´
