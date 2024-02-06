@@ -186,17 +186,17 @@ wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/At
 ```
 # Criar chave SSH git
 ```
-ssh-keygen -t ed25519 -b 4096 -C EMAIL -f NOME_CHAVE
+ssh-keygen -t ed25519 -b 4096 -C EMAIL -f /opt/NOME_CHAVE
 ```
 depois execute...
 ```
-ssh-add ~/NOME_CHAVE
+ssh-add /opt/NOME_CHAVE
 ```
 Coloque no arquivo config que está na pasta ~/.ssh o conteúdo abaixo. Se o arquivo nao existir, crie-o
 ```
 Host bitbucket.org
   AddKeysToAgent yes
-  IdentityFile ~/NOME_CHAVE
+  IdentityFile /opt/NOME_CHAVE
 ```
 # Exclusão com busca no Linux
 ```
