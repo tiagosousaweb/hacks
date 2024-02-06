@@ -168,29 +168,46 @@ server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=server
 ```
 
-# Extrair XSD em Classes:
+# Extrair XSD em Classes JAVA:
 ```
-xjc -wsdl https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
+xjc https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
 ```
 Caso queira criar um pacote específico:
 ```
-xjc -wsdl -p br.com.teste https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
+xjc -p br.com.correios https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
+```
+# Extrair WSDL em Classes JAVA:
+```
+wsimport -keep https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
+```
+Caso queira criar um pacote específico:
+```
+wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
 ```
 # Criar chave SSH git
 ```
-ssh-keygen -t ed25519 -b 4096 -C "{username@emaildomain.com}" -f {ssh-key-name}
+ssh-keygen -t ed25519 -b 4096 -C EMAIL -f NOME_CHAVE
 ```
 depois execute...
 ```
-ssh-add ~/{ssh-key-name}
+ssh-add ~/NOME_CHAVE
 ```
 Coloque no arquivo config que está na pasta ~/.ssh o conteúdo abaixo. Se o arquivo nao existir, crie-o
 ```
 Host bitbucket.org
   AddKeysToAgent yes
-  IdentityFile ~/{ssh-key-name}
+  IdentityFile ~/NOME_CHAVE
 ```
 # Exclusão com busca no Linux
 ```
 find . -name "NOME_OU_EXTENSAO_DO_ARQUIVO" -type f -exec rm {} \;
+```
+
+# Localizar aquivos servidor:
+```
+locate ARQUIVO.pdf
+```
+ou
+```
+sudo find / -type f -iname "ARQUIVO.pdf"
 ```
