@@ -211,3 +211,8 @@ ou
 ```
 sudo find / -type f -iname "ARQUIVO.pdf"
 ```
+
+# Listar arquivos maiores que 500MB no Terminal do Linux
+```
+sudo find / -type f -size +500M -exec ls -lh {} \;
+```
