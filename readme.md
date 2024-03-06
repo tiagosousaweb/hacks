@@ -192,12 +192,28 @@ depois execute...
 ```
 ssh-add /opt/NOME_CHAVE
 ```
-Coloque no arquivo config que está na pasta ~/.ssh o conteúdo abaixo. Se o arquivo nao existir, crie-o
+Abra o arquivo config dentro de ~/.ssh. Se o arquivo nao existir, crie-o:
+
+```
+nano ~/.ssh/config
+```
+Depois cole esse conteúdo:
 ```
 Host bitbucket.org
   AddKeysToAgent yes
   IdentityFile /opt/NOME_CHAVE
+PubkeyAcceptedKeyTypes +ssh-rsa
 ```
+Faça um teste:
+BitBucket: 
+```
+ssh -T git@bitbucket.org
+```
+Github: 
+```
+ssh -T git@github.com
+```
+
 # Exclusão com busca no Linux
 ```
 find . -name "NOME_OU_EXTENSAO_DO_ARQUIVO" -type f -exec rm {} \;
