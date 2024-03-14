@@ -232,3 +232,12 @@ sudo find / -type f -iname "ARQUIVO.pdf"
 ```
 sudo find / -type f -size +500M -exec ls -lh {} \;
 ```
+# Ver config do TeamViwer pelo terminal
+Ver o ID do teamviewer
+```
+sudo teamviewer --info
+```
+Alterar a senha do teamviewer
+```
+sudo teamviewer --passwd newPassword
+```
