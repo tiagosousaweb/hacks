@@ -131,6 +131,10 @@ Crie o certificado manualmente:
 ```
 sudo certbot certonly --manual --preferred-challenges http -d MEUSITE.COM.BR
 ```
+Ou...
+```
+sudo certbot --nginx --email EMAIL --redirect --agree-tos -d MEUSITE.COM.BR
+```
 
 Converta o certificado em chave .p12
 ```
