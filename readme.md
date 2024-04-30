@@ -188,6 +188,10 @@ wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/At
 ```
 ssh-keygen -t ed25519 -b 4096 -C EMAIL -f /opt/NOME_CHAVE
 ```
+Inicie o agente ssh
+```
+eval "$(ssh-agent -s)"
+```
 depois execute...
 ```
 ssh-add /opt/NOME_CHAVE
