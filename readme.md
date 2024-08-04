@@ -192,22 +192,33 @@ wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/At
 ```
 ssh-keygen -t ed25519 -b 4096 -C EMAIL -f /opt/NOME_CHAVE
 ```
+Criar a pasta (se não existir)
+```
+cd /opt; mkdir /chave-git
+```
 Inicie o agente ssh
 ```
 eval "$(ssh-agent -s)"
 ```
 depois execute...
 ```
-ssh-add /opt/NOME_CHAVE
+ssh-add /opt/chave-git/NOME_CHAVE
 ```
 Abra o arquivo config dentro de ~/.ssh. Se o arquivo nao existir, crie-o:
 
 ```
 nano ~/.ssh/config
 ```
-Depois cole esse conteúdo:
+Depois cole esse conteúdo (caso for Bitbucket):
 ```
 Host bitbucket.org
+  AddKeysToAgent yes
+  IdentityFile /opt/NOME_CHAVE
+PubkeyAcceptedKeyTypes +ssh-rsa
+```
+Depois cole esse conteúdo (caso for Github):
+```
+Host github
   AddKeysToAgent yes
   IdentityFile /opt/NOME_CHAVE
 PubkeyAcceptedKeyTypes +ssh-rsa
