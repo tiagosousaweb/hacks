@@ -192,7 +192,7 @@ wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/At
 
 Criar a pasta (se não existir)
 ```
-cd /opt; mkdir /chave-git
+cd /opt; mkdir chave-git
 ```
 Gerar a chave
 ```
@@ -215,14 +215,14 @@ Depois cole esse conteúdo (caso for Bitbucket):
 ```
 Host bitbucket.org
   AddKeysToAgent yes
-  IdentityFile /opt/NOME_CHAVE
+  IdentityFile /opt/chave-git/NOME_CHAVE
 PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 Depois cole esse conteúdo (caso for Github):
 ```
-Host github
+Host github.com
   AddKeysToAgent yes
-  IdentityFile /opt/NOME_CHAVE
+  IdentityFile /opt/chave-git/NOME_CHAVE
 PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 Faça um teste:
