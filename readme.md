@@ -189,12 +189,14 @@ Caso queira criar um pacote específico:
 wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
 ```
 # Criar chave SSH git
-```
-ssh-keygen -t ed25519 -b 4096 -C EMAIL -f /opt/NOME_CHAVE
-```
+
 Criar a pasta (se não existir)
 ```
 cd /opt; mkdir /chave-git
+```
+Gerar a chave
+```
+ssh-keygen -t ed25519 -b 4096 -C EMAIL -f /opt/chave-git/NOME_CHAVE
 ```
 Inicie o agente ssh
 ```
