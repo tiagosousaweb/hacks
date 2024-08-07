@@ -76,7 +76,7 @@ sudo apt install broadcom-sta-dkms
 ## Remover programa instalado via arquivo .DEB no Linux
 Salvar os nomes de todos os programas no arquivo lista.txt na pasta /opt/
 ```
-sudo dpkg -l > /opt/lista.txt
+sudo dpkg-query -l > /opt/programas.txt
 ```
 Procurar pelo nome do programa e depois executar:
 ```
