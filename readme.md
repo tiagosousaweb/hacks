@@ -127,7 +127,13 @@ SOURCE /caminho/para/backup_geral.sql;
 
 ## Como criar um certificado para um domónio usando certbot
 
-Crie o certificado manualmente:
+Como criar o certificado automaticamente:
+```
+sudo apt-get update
+sudo apt-get install certbot
+sudo certbot certonly --standalone -d seu-dominio.com
+```
+Como criar o certificado manualmente:
 ```
 sudo certbot certonly --manual --preferred-challenges http -d MEUSITE.COM.BR
 ```
