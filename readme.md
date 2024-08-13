@@ -277,3 +277,20 @@ Alterar a senha do teamviewer
 ```
 sudo teamviewer --passwd newPassword
 ```
+# Redirecionar tráfego de uma porta para outra no UbuntuServer
+Por exemplo, redirecionar o tráfego da porta 80 para a porta 5000 (faz sumir o dominio.com:5000 e fica só dominio.com)
+```
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 5000
+```
+Salvar
+```
+sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+```
+Verificar se a regra foi aplicada
+```
+sudo iptables -t nat -L -n -v
+```
+Excluir uma regra usando o número da linha
+```
+sudo iptables -t nat -D PREROUTING 1
+```
