@@ -142,7 +142,7 @@ Ou...
 sudo certbot --nginx --email EMAIL --redirect --agree-tos -d MEUSITE.COM.BR
 ```
 
-Converta o certificado em chave .p12
+Como converter o cartificado em PKCS12
 ```
 openssl pkcs12 -export -out /opt/certificado.p12 -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -in /etc/letsencrypt/live/MEUSITE.COM.BR/fullchain.pem
 ```
@@ -176,6 +176,15 @@ server.ssl.key-store=/opt/server.p12
 server.ssl.key-store-password=senha-do-keystore
 server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=server
+```
+# Como criar um certificado pelo Certbot e transformar em .p12
+Criar o certificado para o dominio
+```
+sudo certbot certonly --standalone -d example.com
+```
+Transformar em PKCS12
+```
+openssl pkcs12 -export -in cert.pem -inkey privkey.pem -out /opt/certificado.p12 -name "certificado" -CAfile chain.pem -caname root
 ```
 
 # Extrair XSD em Classes JAVA:
