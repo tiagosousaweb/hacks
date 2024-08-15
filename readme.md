@@ -184,7 +184,7 @@ sudo certbot certonly --standalone -d example.com
 ```
 Transformar em PKCS12
 ```
-openssl pkcs12 -export -in cert.pem -inkey privkey.pem -out /opt/certificado.p12 -name "certificado" -CAfile chain.pem -caname root
+openssl pkcs12 -export -in /etc/letsencrypt/live/MEUSITE.COM.BR/cert.pem -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -out /opt/certificado.p12 -name "certificado" -CAfile /etc/letsencrypt/live/MEUSITE.COM.BR/chain.pem -caname certificado
 ```
 
 # Extrair XSD em Classes JAVA:
