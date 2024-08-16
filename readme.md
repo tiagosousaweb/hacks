@@ -286,7 +286,7 @@ Salvar
 ```
 sudo sh -c "iptables-save > /etc/iptables/rules.v4"
 ```
-Verificar se a regra foi aplicada
+Listar os redirecionamentos e verificar se a regra foi aplicada
 ```
 sudo iptables -t nat -L -n -v
 ```
