@@ -294,3 +294,47 @@ Excluir uma regra usando o número da linha
 ```
 sudo iptables -t nat -D PREROUTING 1
 ```
+# Redirecionar tráfego e portas usando o NGINX
+Entrar no arquivo de configuração
+```
+sudo nano /etc/nginx/sites-available/default
+```
+Configurações:
+```
+# HTTPS
+server {
+    listen 443 ssl;
+    server_name MEUSITE.com;
+
+    ssl_certificate /etc/letsencrypt/live/cerurbapi.com/cert.pem;
+    ssl_certificate_key /etc/letsencrypt/live/cerurbapi.com/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/cerurbapi.com/chain.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+
+    location / {
+        proxy_pass http://localhost:5000; # Porta em que o Quarkus está rodando
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+# HTTP
+server {
+    listen 80;
+    server_name MEUSITE.com;
+
+    location / {
+        proxy_pass http://localhost:5000; # Porta em que o Quarkus está rodando
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
