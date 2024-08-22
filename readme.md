@@ -60,7 +60,8 @@ nohup java -jar app-0.0.1-SNAPSHOT.jar &
 ```
 #!/bin/bash
 
-echo 'SUA_SENHA' | sudo -S COMANDO_AQUI
+echo '33229822' | sudo -S apt update -y
+sudo apt upgrade -y
 ```
 *A parte #!/bin/bash é somente para quando o comando for colocado dentro de um arquivo .sh*
 
