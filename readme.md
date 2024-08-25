@@ -339,3 +339,7 @@ server {
     }
 }
 ```
+# Definir o fuso horário do Ubuntu server para São Paulo
+```
+sudo timedatectl set-timezone America/Sao_Paulo
+```
