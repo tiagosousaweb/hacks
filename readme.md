@@ -348,6 +348,7 @@ Instalar o unrtf
 ```
 sudo apt-get install unrtf
 ```
+Executar
 ```
 unrtf --html arquivo.rtf > arquivo.html
 ```
