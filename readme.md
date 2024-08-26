@@ -343,3 +343,7 @@ server {
 ```
 sudo timedatectl set-timezone America/Sao_Paulo
 ```
+# Converter arquivo .rtf em .html
+```
+unrtf --html arquivo.rtf > arquivo.html
+```
