@@ -344,6 +344,10 @@ server {
 sudo timedatectl set-timezone America/Sao_Paulo
 ```
 # Converter arquivo .rtf em .html
+Instalar o unrtf
+```
+sudo apt-get install unrtf
+```
 ```
 unrtf --html arquivo.rtf > arquivo.html
 ```
