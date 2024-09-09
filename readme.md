@@ -298,7 +298,7 @@ sudo iptables -t nat -D PREROUTING 1
 # Redirecionar tráfego e portas usando o NGINX
 Entrar no arquivo de configuração
 ```
-sudo nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-enabled/default
 ```
 Configurações:
 ```
