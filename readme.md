@@ -305,6 +305,7 @@ Configurações:
 server {
     listen 443 ssl;
     server_name SITE.COM;
+    client_max_body_size 500M; # Tamanho dos uploads
 
     ssl_certificate /etc/letsencrypt/live/SITE.COM/cert.pem;
     ssl_certificate_key /etc/letsencrypt/live/SITE.COM/privkey.pem;
@@ -312,7 +313,7 @@ server {
 
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers on;
-    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";    
 
     # Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
     client_max_body_size 500M;
@@ -335,6 +336,7 @@ server {
 server {
     listen 80;
     server_name SITE.COM;
+    client_max_body_size 500M; # Tamanho dos uploads
     
     # Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
     client_max_body_size 500M;
@@ -354,6 +356,11 @@ server {
     }
 }
 ```
+Após isso basta reiniciar o Nginx:
+```
+sudo systemctl restart nginx
+```
+
 # Definir o fuso horário do Ubuntu server para São Paulo
 ```
 sudo timedatectl set-timezone America/Sao_Paulo
