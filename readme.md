@@ -396,3 +396,7 @@ Para restaurar:
 ```
 sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d banco_teste -Fc /opt/backup_customizado.dump
 ```
+# Listar os 10 maiores PDF's usando o terminal do Linux
+```
+find . -type f -name "*.pdf" -exec du -h {} + | sort -hr | head -n 10
+```
