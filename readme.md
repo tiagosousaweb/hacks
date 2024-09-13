@@ -367,3 +367,25 @@ Executar
 ```
 unrtf --html arquivo.rtf > arquivo.html
 ```
+# Fazer backup database Postgresql:
+Salvar o backup da base 'backup' na paasta /opt/backup_customizado.dump 
+```
+pg_dump -U postgres -h localhost -p 5432 -d backup -Fc > backup_customizado.dump
+```
+Se quiser apontar pra uma versão específica do pg_dump:
+```
+ls /usr/lib/postgresql/
+```
+Você verá algo como:
+```
+12  15  16
+```
+Aponte para a versão desejada:
+```
+/usr/lib/postgresql/16/bin/pg_dump -U postgres -h localhost -p 5432 -d backup -Fc > backup_customizado.dump
+```
+
+Para restaurar:
+```
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d banco_teste -Fc /opt/backup_customizado.dump
+```
