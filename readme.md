@@ -52,9 +52,13 @@ psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
 git rm -r --cached . && git add . && git commit -m ".gitignore fix"
 ```
-## Deixar o java rodando em segundo plano mesmo fechando o terminal do servidor
+## Deixar o java rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
 ```
-nohup java -jar app-0.0.1-SNAPSHOT.jar &
+nohup java -jar app-0.0.1-SNAPSHOT.jar > /tmp/logAplicacao.log 2>&1 &
+```
+## Deixar o Python rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
+```
+nohup python3 /opt/script.py > /tmp/logAplicacao.log 2>&1 &
 ```
 ## Senha como argumento em comando no terminal do linux
 ```
