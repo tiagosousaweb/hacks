@@ -404,3 +404,11 @@ sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d banco_test
 ```
 find . -type f -name "*.pdf" -exec du -h {} + | sort -hr | head -n 10
 ```
+# (Postgresql) Listar todas as colunas do tipo varchar que possui tamanho 255
+```
+SELECT table_name, column_name, character_maximum_length
+FROM information_schema.columns
+WHERE character_maximum_length = 255
+AND table_schema NOT IN ('information_schema', 'pg_catalog');
+
+```
