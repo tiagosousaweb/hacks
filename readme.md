@@ -393,12 +393,15 @@ Você verá algo como:
 ```
 Aponte para a versão desejada:
 ```
-/usr/lib/postgresql/16/bin/pg_dump -U postgres -h localhost -p 5432 -d backup -Fc > backup_customizado.dump
+/usr/lib/postgresql/16/bin/pg_dump -U postgres -h localhost -p 5432 -d nome_do_banco -Fc > /opt/backup_customizado.dump
 ```
-
+Para usar o usuário root caso não seja possível autenticar com o usuário postgres:
+```
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -h localhost -p 5432 -d nome_do_banco /opt/backup_customizado.dump
+```
 Para restaurar:
 ```
-sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d banco_teste -Fc /opt/backup_customizado.dump
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d nome_do_banco -Fc /opt/backup_customizado.dump
 ```
 # Listar os 10 maiores PDF's usando o terminal do Linux
 ```
