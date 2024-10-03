@@ -424,3 +424,16 @@ WHERE character_maximum_length = 255
 AND table_schema NOT IN ('information_schema', 'pg_catalog');
 
 ```
+# Listar PDF's que possuem mais de 10 páginas
+```
+find . -type f -iname "*.pdf" -print0 | while IFS= read -r -d '' pdf; do
+    # Extrai o número de páginas do PDF usando pdfinfo
+    pages=$(pdfinfo "$pdf" | grep "^Pages:" | awk '{print $2}')
+    
+    # Verifica se o número de páginas é maior que 10
+    if [ "$pages" -gt 10 ]; then
+        # Exibe o caminho completo do arquivo PDF que atende ao critério
+        echo "$pdf"
+    fi
+done
+```
