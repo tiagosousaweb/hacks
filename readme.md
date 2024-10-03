@@ -426,7 +426,7 @@ AND table_schema NOT IN ('information_schema', 'pg_catalog');
 ```
 # Listar PDF's que possuem mais de 10 páginas
 ```
-find . -type f -iname "*.pdf" -print0 | while IFS= read -r -d '' pdf; do
+find /caminho/para/pasta/ -type f -iname "*.pdf" -print0 | while IFS= read -r -d '' pdf; do
     # Extrai o número de páginas do PDF usando pdfinfo
     pages=$(pdfinfo "$pdf" | grep "^Pages:" | awk '{print $2}')
     
