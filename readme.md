@@ -163,6 +163,7 @@ Crie o arquivo PKCS12:
 ```
 openssl pkcs12 -export -in /opt/server.crt -inkey /opt/server.key -out /opt/server.p12 -name server
 ```
+...Coloque uma senha de exportação
 
 Verifique o conteúdo do keystore:
 Verifique o conteúdo do arquivo PKCS12 usando o comando keytool (ferramenta Java para gerenciar keystores):
@@ -170,9 +171,6 @@ Verifique o conteúdo do arquivo PKCS12 usando o comando keytool (ferramenta Jav
 keytool -list -keystore /opt/server.p12 -storetype PKCS12
 ```
 Isso listará todas as entradas (certificados e chaves) no keystore. Verifique se o alias "server" está presente na lista.
-
-
-...Coloque uma senha de exportação
 
 Para adicionar em um projeto:
 Coloque isso no application.properties:
