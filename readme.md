@@ -152,14 +152,14 @@ Como converter o cartificado em PKCS12
 openssl pkcs12 -export -out /opt/certificado.p12 -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -in /etc/letsencrypt/live/MEUSITE.COM.BR/fullchain.pem
 ```
 
-## Colocar certificado autoassinado no Spring Boot
+## Criar certificado autoassinado e transformá-lo em P12
 
 Gere um certificado autoassinado:
 ```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/server.key -out /opt/server.crt
 ```
 
-Crie o arquivo PKCS12 que irá para o application.properties:
+Crie o arquivo PKCS12:
 ```
 openssl pkcs12 -export -in /opt/server.crt -inkey /opt/server.key -out /opt/server.p12 -name server
 ```
@@ -174,6 +174,7 @@ Isso listará todas as entradas (certificados e chaves) no keystore. Verifique s
 
 ...Coloque uma senha de exportação
 
+Para adicionar em um projeto:
 Coloque isso no application.properties:
 ```
 server.ssl.enabled=true
@@ -181,6 +182,11 @@ server.ssl.key-store=/opt/server.p12
 server.ssl.key-store-password=senha-do-keystore
 server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=server
+```
+Se for ejb:
+```
+System.setProperty("javax.net.ssl.trustStore", "/opt/certificado/certificado.p12");
+System.setProperty("javax.net.ssl.trustStorePassword", "fxiladmin");
 ```
 # Como criar um certificado pelo Certbot e transformar em .p12
 Criar o certificado para o dominio
