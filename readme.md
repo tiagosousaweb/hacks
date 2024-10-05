@@ -1,4 +1,4 @@
-# Excluir database:
+## Excluir database:
 https://www.postgresqltutorial.com/postgresql-drop-database/
 
 ```
@@ -13,7 +13,7 @@ WHERE
 DROP DATABASE testdb1;
 ```
 
-# Instalar PostgreSql 12 no Linux
+## Instalar PostgreSql 12 no Linux
 
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -; sudo apt-get update -u; sudo apt-get -y install postgresql-12
@@ -21,7 +21,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 
 *Só copiar e colar no terminal*
 
-# Start database server PostgreSql
+## Start database server PostgreSql
 
 ```
 sudo pg_ctlcluster 12 main start
@@ -31,7 +31,7 @@ ou
 sudo systemctl start postgresql@12-main
 ```
 
-# Alterar senha master PostgreSql 12
+## Alterar senha master PostgreSql 12
 *Logar como sudo no postgres*
 ```
 sudo passwd postgres
@@ -42,25 +42,25 @@ su postgres
 ```
 *logar com a senha alterada anteriormente*
 
-# Alterar senha de conexão PostgreSql 12
+## Alterar senha de conexão PostgreSql 12
 
 ```
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
 
-# Limpar cache do Git para fazer funcionar o gitignore
+## Limpar cache do Git para fazer funcionar o gitignore
 ```
 git rm -r --cached . && git add . && git commit -m ".gitignore fix"
 ```
-# Deixar o java rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
+## Deixar o java rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
 ```
 nohup java -jar app-0.0.1-SNAPSHOT.jar > /tmp/logAplicacao.log 2>&1 &
 ```
-# Deixar o Python rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
+## Deixar o Python rodando em segundo plano mesmo fechando o terminal do servidor e colocar o log na /tmp/logAplicacao.log
 ```
 nohup python3 /opt/script.py > /tmp/logAplicacao.log 2>&1 &
 ```
-# Senha como argumento em comando no terminal do linux
+## Senha como argumento em comando no terminal do linux
 ```
 #!/bin/bash
 
@@ -69,7 +69,7 @@ sudo apt upgrade -y
 ```
 *A parte #!/bin/bash é somente para quando o comando for colocado dentro de um arquivo .sh*
 
-# Atualizar driver's Linux
+## Atualizar driver's Linux
 ```
 sudo pkcon update && apt upgrade
 
@@ -78,7 +78,7 @@ sudo pkcon install linux-headers-$(uname -r) build-essential
 sudo apt install broadcom-sta-dkms
 ```
 
-# Remover programa instalado via arquivo .DEB no Linux
+## Remover programa instalado via arquivo .DEB no Linux
 Salvar os nomes de todos os programas no arquivo lista.txt na pasta /opt/
 ```
 sudo dpkg-query -l > /opt/programas.txt
@@ -88,7 +88,7 @@ Procurar pelo nome do programa e depois executar:
 sudo dkpg -P nome-do-programa
 ```
 
-# Para instalar e reiniciar o MySQL no Ubuntu, você pode seguir estas etapas:
+## Para instalar e reiniciar o MySQL no Ubuntu, você pode seguir estas etapas:
 
 sudo apt-get update
 sudo apt-get install mysql-server
@@ -97,12 +97,12 @@ Configuração do MySQL:
 
 sudo systemctl status mysql
 
-# Reiniciar o serviço do MySQL:
+## Reiniciar o serviço do MySQL:
 
 sudo systemctl restart mysql
 
 
-# Definir uma senha para o usuário root do MySQL
+## Definir uma senha para o usuário root do MySQL
 sudo mysql
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nova_senha';
@@ -110,7 +110,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nova_sen
 FLUSH PRIVILEGES;
 
 
-# Caso dê erro ao iniciar o MySQL
+## Caso dê erro ao iniciar o MySQL
 Verifique se há algum processo relacionado ao MySQL em execução usando o seguinte comando:
 sudo lsof -i :3306
 sudo reboot
@@ -118,7 +118,7 @@ sudo reboot
 Após reiniciar o sistema, tente iniciar o serviço MySQL usando o comando 'sudo systemctl start mysql' novamente.
 
 
-# Para restaurar a base digite:
+## Para restaurar a base digite:
 mysql -u nome_de_usuario -p nome_do_banco_de_dados < /path/to/backup.sql
 
 Caso não dê certo, executar os comandos abaixo:
@@ -130,7 +130,7 @@ USE nome_da_base;
 
 SOURCE /caminho/para/backup_geral.sql;
 
-# Como criar um certificado para um domínio usando certbot
+## Como criar um certificado para um domínio usando certbot
 
 Como criar o certificado automaticamente:
 ```
@@ -152,7 +152,7 @@ Como converter o cartificado em PKCS12
 openssl pkcs12 -export -out /opt/certificado.p12 -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -in /etc/letsencrypt/live/MEUSITE.COM.BR/fullchain.pem
 ```
 
-# Criar certificado autoassinado e transformá-lo em P12
+## Criar certificado autoassinado e transformá-lo em P12
 
 Gere um certificado autoassinado:
 ```
@@ -186,7 +186,7 @@ Se for ejb:
 System.setProperty("javax.net.ssl.trustStore", "/opt/certificado/certificado.p12");
 System.setProperty("javax.net.ssl.trustStorePassword", "fxiladmin");
 ```
-# Como criar um certificado pelo Certbot e transformar em .p12
+## Como criar um certificado pelo Certbot e transformar em .p12
 Criar o certificado para o dominio
 ```
 sudo certbot certonly --standalone -d example.com
@@ -196,7 +196,7 @@ Transformar em PKCS12
 openssl pkcs12 -export -in /etc/letsencrypt/live/MEUSITE.COM.BR/cert.pem -inkey /etc/letsencrypt/live/MEUSITE.COM.BR/privkey.pem -out /opt/certificado.p12 -name "certificado" -CAfile /etc/letsencrypt/live/MEUSITE.COM.BR/chain.pem -caname certificado
 ```
 
-# Extrair XSD em Classes JAVA:
+## Extrair XSD em Classes JAVA:
 ```
 xjc https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
 ```
@@ -204,7 +204,7 @@ Caso queira criar um pacote específico:
 ```
 xjc -p br.com.correios https://www2.correios.com.br/sistemas/encomendas/sigepweb/doc/SIGEPWEB_VALIDADOR_XML_V2.XSD
 ```
-# Extrair WSDL em Classes JAVA:
+## Extrair WSDL em Classes JAVA:
 ```
 wsimport -keep https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
 ```
@@ -212,7 +212,7 @@ Caso queira criar um pacote específico:
 ```
 wsimport -keep -p br.com.correios https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
 ```
-# Criar chave SSH git
+## Criar chave SSH git
 
 Criar a pasta (se não existir)
 ```
@@ -259,12 +259,12 @@ Github:
 ssh -T git@github.com
 ```
 
-# Exclusão com busca no Linux
+## Exclusão com busca no Linux
 ```
 find . -name "NOME_OU_EXTENSAO_DO_ARQUIVO" -type f -exec rm {} \;
 ```
 
-# Localizar aquivos servidor:
+## Localizar aquivos servidor:
 ```
 locate ARQUIVO.pdf
 ```
@@ -273,11 +273,11 @@ ou
 sudo find / -type f -iname "ARQUIVO.pdf"
 ```
 
-# Listar arquivos maiores que 500MB no Terminal do Linux
+## Listar arquivos maiores que 500MB no Terminal do Linux
 ```
 sudo find / -type f -size +500M -exec ls -lh {} \;
 ```
-# Ver config do TeamViwer pelo terminal
+## Ver config do TeamViwer pelo terminal
 Ver o ID do teamviewer
 ```
 sudo teamviewer --info
@@ -286,7 +286,7 @@ Alterar a senha do teamviewer
 ```
 sudo teamviewer --passwd newPassword
 ```
-# Redirecionar tráfego de uma porta para outra no UbuntuServer
+## Redirecionar tráfego de uma porta para outra no UbuntuServer
 Por exemplo, redirecionar o tráfego da porta 80 para a porta 5000 (faz sumir o dominio.com:5000 e fica só dominio.com)
 ```
 sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 5000
@@ -303,7 +303,7 @@ Excluir uma regra usando o número da linha
 ```
 sudo iptables -t nat -D PREROUTING 1
 ```
-# Redirecionar tráfego e portas usando o NGINX
+## Redirecionar tráfego e portas usando o NGINX
 Entrar no arquivo de configuração
 ```
 sudo nano /etc/nginx/sites-enabled/default
@@ -313,7 +313,7 @@ Configurações:
 server {
     listen 443 ssl;
     server_name SITE.COM;
-    client_max_body_size 500M; # Tamanho dos uploads
+    client_max_body_size 500M; ## Tamanho dos uploads
 
     ssl_certificate /etc/letsencrypt/live/SITE.COM/cert.pem;
     ssl_certificate_key /etc/letsencrypt/live/SITE.COM/privkey.pem;
@@ -323,17 +323,17 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";    
 
-    # Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
+    ## Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
     client_max_body_size 500M;
 
     location / {
-        proxy_pass http://localhost:5000; # Porta em que o Quarkus está rodando
+        proxy_pass http://localhost:5000; ## Porta em que o Quarkus está rodando
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
 
-        # Configurações de timeout
+        ## Configurações de timeout
         proxy_read_timeout 1800s;
         proxy_connect_timeout 1800s;
         proxy_send_timeout 1800s;
@@ -344,19 +344,19 @@ server {
 server {
     listen 80;
     server_name SITE.COM;
-    client_max_body_size 500M; # Tamanho dos uploads
+    client_max_body_size 500M; ## Tamanho dos uploads
     
-    # Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
+    ## Tamanho da requisição, feita pra aumentar o recebimento de arquivos grandes via api
     client_max_body_size 500M;
 
     location / {
-        proxy_pass http://localhost:5000; # Porta em que o Quarkus está rodando
+        proxy_pass http://localhost:5000; ## Porta em que o Quarkus está rodando
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
 
-        # Configurações de timeout
+        ## Configurações de timeout
         proxy_read_timeout 1800s;
         proxy_connect_timeout 1800s;
         proxy_send_timeout 1800s;
@@ -369,11 +369,11 @@ Após isso basta reiniciar o Nginx:
 sudo systemctl restart nginx
 ```
 
-# Definir o fuso horário do Ubuntu server para São Paulo
+## Definir o fuso horário do Ubuntu server para São Paulo
 ```
 sudo timedatectl set-timezone America/Sao_Paulo
 ```
-# Converter arquivo .rtf em .html
+## Converter arquivo .rtf em .html
 Instalar o unrtf
 ```
 sudo apt-get install unrtf
@@ -382,7 +382,7 @@ Executar
 ```
 unrtf --html arquivo.rtf > arquivo.html
 ```
-# Fazer backup database Postgresql:
+## Fazer backup database Postgresql:
 Salvar o backup da base 'backup' na pasta /opt/backup_customizado.dump 
 ```
 pg_dump -U postgres -h localhost -p 5432 -d backup -Fc > backup_customizado.dump
@@ -407,20 +407,20 @@ Para restaurar:
 ```
 sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d nome_do_banco -Fc /opt/backup_customizado.dump
 ```
-# Fazer backup do Postgresql automaticamente (colocar em um arquivo .sh e chamar no crontab):
+## Fazer backup do Postgresql automaticamente (colocar em um arquivo .sh e chamar no crontab):
 ```
 #!/bin/bash
-# Cria um backup com data e hora
+## Cria um backup com data e hora
 sudo PGPASSWORD="@sinpiadmin@#" pg_dump -U postgres -h localhost -p 5432 -d normas -Fc > /opt/database-backups/backup_$(date +%d-%m-%Y_%H-%M-%S).dump
 
-# Remove backups mais antigos que 7 dias
+## Remove backups mais antigos que 7 dias
 find /opt/database-backups/ -name "*.dump" -type f -mtime +7 -exec rm {} \;
 ```
-# Listar os 10 maiores PDF's usando o terminal do Linux
+## Listar os 10 maiores PDF's usando o terminal do Linux
 ```
 find . -type f -name "*.pdf" -exec du -h {} + | sort -hr | head -n 10
 ```
-# (Postgresql) Listar todas as colunas do tipo varchar que possui tamanho 255
+## (Postgresql) Listar todas as colunas do tipo varchar que possui tamanho 255
 ```
 SELECT table_name, column_name, character_maximum_length
 FROM information_schema.columns
@@ -428,15 +428,15 @@ WHERE character_maximum_length = 255
 AND table_schema NOT IN ('information_schema', 'pg_catalog');
 
 ```
-# Listar PDF's que possuem mais de 10 páginas
+## Listar PDF's que possuem mais de 10 páginas
 ```
 find /caminho/para/pasta/ -type f -iname "*.pdf" -print0 | while IFS= read -r -d '' pdf; do
-    # Extrai o número de páginas do PDF usando pdfinfo
+    ## Extrai o número de páginas do PDF usando pdfinfo
     pages=$(pdfinfo "$pdf" | grep "^Pages:" | awk '{print $2}')
     
-    # Verifica se o número de páginas é maior que 10
+    ## Verifica se o número de páginas é maior que 10
     if [ "$pages" -gt 10 ]; then
-        # Exibe o caminho completo do arquivo PDF que atende ao critério
+        ## Exibe o caminho completo do arquivo PDF que atende ao critério
         echo "$pdf"
     fi
 done
