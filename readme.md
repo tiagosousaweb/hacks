@@ -172,6 +172,19 @@ keytool -list -keystore /opt/server.p12 -storetype PKCS12
 ```
 Isso listará todas as entradas (certificados e chaves) no keystore. Verifique se o alias "server" está presente na lista.
 
+## Configurar o KeyStore
+Extrair o Certificado Público do KeyStore:
+```
+keytool -exportcert -alias server -keystore /opt/certificado/certificado.p12 -storetype PKCS12 -storepass fxiladmin -file /opt/certificado/server.crt
+```
+Criar um Novo TrustStore e Importar o Certificado:
+```
+keytool -importcert -alias server-cert -file /opt/certificado/server.crt -keystore /opt/certificado/truststore.jks -storepass fxiladmin -noprompt
+```
+Verificar o Conteúdo do TrustStore:
+```
+keytool -list -keystore /opt/certificado/truststore.jks -storepass fxiladmin -storetype JKS
+```
 Para adicionar em um projeto:
 Coloque isso no application.properties:
 ```
