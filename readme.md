@@ -156,19 +156,19 @@ openssl pkcs12 -export -out /opt/certificado.p12 -inkey /etc/letsencrypt/live/ME
 
 Gere um certificado autoassinado:
 ```
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/server.key -out /opt/server.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/certificado/server.key -out /opt/certificado/server.crt
 ```
 
 Crie o arquivo PKCS12:
 ```
-openssl pkcs12 -export -in /opt/server.crt -inkey /opt/server.key -out /opt/server.p12 -name server
+openssl pkcs12 -export -in /opt/certificado/server.crt -inkey /opt/certificado/server.key -out /opt/certificado/certificado.p12 -name server
 ```
 ...Coloque uma senha de exportação
 
 Verifique o conteúdo do keystore:
 Verifique o conteúdo do arquivo PKCS12 usando o comando keytool (ferramenta Java para gerenciar keystores):
 ```
-keytool -list -keystore /opt/server.p12 -storetype PKCS12
+keytool -list -keystore /opt/certificado/certificado.p12 -storetype PKCS12
 ```
 Isso listará todas as entradas (certificados e chaves) no keystore. Verifique se o alias "server" está presente na lista.
 
