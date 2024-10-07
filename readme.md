@@ -454,3 +454,12 @@ find /caminho/para/pasta/ -type f -iname "*.pdf" -print0 | while IFS= read -r -d
     fi
 done
 ```
+## Executar alias (atalhos) no ubuntu
+Colocar os comandos no arquivo ~/.profile
+```
+nano ~/.profile
+```
+Se ele não existir colocar no ~/.bash_profile
+```
+~/.bash_profile
+```
