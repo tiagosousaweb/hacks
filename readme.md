@@ -429,6 +429,10 @@ sudo PGPASSWORD="@sinpiadmin@#" pg_dump -U postgres -h localhost -p 5432 -d norm
 ## Remove backups mais antigos que 7 dias
 find /opt/database-backups/ -name "*.dump" -type f -mtime +7 -exec rm {} \;
 ```
+## Listas os 10 PDF's que possuem mais número de páginas
+```
+find . -type f -name "*.pdf" -exec sh -c 'pdfinfo "$1" | grep "^Pages:" | awk "{print \$2, \"$1\"}"' _ {} \; | sort -nr | head -n 10
+```
 ## Listar os 10 maiores PDF's usando o terminal do Linux
 ```
 find . -type f -name "*.pdf" -exec du -h {} + | sort -hr | head -n 10
