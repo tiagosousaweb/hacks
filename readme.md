@@ -340,7 +340,7 @@ server {
     client_max_body_size 500M;
 
     location / {
-        proxy_pass http://localhost:5000; ## Porta em que o Quarkus está rodando
+        proxy_pass http://127.0.0.1:5000; ## Porta em que o Quarkus está rodando
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -363,7 +363,7 @@ server {
     client_max_body_size 500M;
 
     location / {
-        proxy_pass http://localhost:5000; ## Porta em que o Quarkus está rodando
+        proxy_pass http://127.0.0.1:5000; ## Porta em que o Quarkus está rodando
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -429,21 +429,13 @@ sudo PGPASSWORD="SENHA" pg_dump -U postgres -h localhost -p 5432 -d normas -Fc >
 ## Remove backups mais antigos que 7 dias
 find /opt/PASTA_BACKUP/ -name "*.dump" -type f -mtime +7 -exec rm {} \;
 ```
-## Listas os 10 PDF's que possuem mais número de páginas
+## Listas os 10 maiores PDF's em número de páginas
 ```
 find . -type f -name "*.pdf" -exec sh -c 'pdfinfo "$1" | grep "^Pages:" | awk "{print \$2, \"$1\"}"' _ {} \; | sort -nr | head -n 10
 ```
-## Listar os 10 maiores PDF's usando o terminal do Linux
+## Listar os 10 maiores PDF's em tamanho
 ```
 find . -type f -name "*.pdf" -exec du -h {} + | sort -hr | head -n 10
-```
-## (Postgresql) Listar todas as colunas do tipo varchar que possui tamanho 255
-```
-SELECT table_name, column_name, character_maximum_length
-FROM information_schema.columns
-WHERE character_maximum_length = 255
-AND table_schema NOT IN ('information_schema', 'pg_catalog');
-
 ```
 ## Listar PDF's que possuem mais de 10 páginas
 ```
@@ -457,6 +449,14 @@ find /caminho/para/pasta/ -type f -iname "*.pdf" -print0 | while IFS= read -r -d
         echo "$pdf"
     fi
 done
+```
+## (Postgresql) Listar todas as colunas do tipo varchar que possui tamanho 255
+```
+SELECT table_name, column_name, character_maximum_length
+FROM information_schema.columns
+WHERE character_maximum_length = 255
+AND table_schema NOT IN ('information_schema', 'pg_catalog');
+
 ```
 ## Executar alias (atalhos) no ubuntu
 Colocar os comandos no arquivo ~/.profile
