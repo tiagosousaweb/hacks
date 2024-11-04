@@ -467,3 +467,7 @@ Se ele não existir colocar no ~/.bash_profile
 ```
 ~/.bash_profile
 ```
+## Extrair informações certificado pfx
+```
+openssl pkcs12 -in /opt/certificado.pfx -nokeys -clcerts -legacy -passin pass:12345 | openssl x509 -noout -subject -issuer -pubkey -serial -enddate
+```
