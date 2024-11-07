@@ -471,3 +471,12 @@ Se ele não existir colocar no ~/.bash_profile
 ```
 openssl pkcs12 -in /opt/certificado.pfx -nokeys -clcerts -legacy -passin pass:12345 | openssl x509 -noout -subject -issuer -pubkey -serial -enddate
 ```
+## Instalar versão mais recente do BR Office
+Remover o Offic antigo (opcional)
+```
+sudo apt remove --purge libreoffice*
+```
+Instalar
+```
+sudo add-apt-repository ppa:libreoffice/ppa; sudo apt update; sudo apt install libreoffice
+```
