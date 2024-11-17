@@ -493,9 +493,6 @@ public void manipularPdf(String caminhoOriginal, String caminhoDestino) {
             float marginBottom = 120;
             float marginLeft = 20;
 
-            // Itera sobre todas as páginas do documento
-            int numberOfPages = documentoPdf.getNumberOfPages();
-
             for (int i = 1; i <= documentoPdf.getNumberOfPages(); i++) {
                 PdfPage page = documentoPdf.getPage(i);
 
