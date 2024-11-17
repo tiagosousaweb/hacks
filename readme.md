@@ -543,15 +543,6 @@ public void manipularPdf(String caminhoOriginal, String caminhoDestino) {
 
             PdfDocument documentoPdf = new PdfDocument(new PdfReader(caminhoOriginal), new PdfWriter(caminhoDestino));
 
-            // Define o tamanho das margens que você deseja adicionar
-            float marginTop = 20;
-            float marginRight = 20;
-            float marginBottom = 120;
-            float marginLeft = 20;
-
-            // Itera sobre todas as páginas do documento
-            int numberOfPages = documentoPdf.getNumberOfPages();
-
             for (int numeroPagina = 1; numeroPagina <= documentoPdf.getNumberOfPages(); numeroPagina++) {
                 PdfPage paginaAtual = documentoPdf.getPage(numeroPagina);
                 PdfDictionary dicionarioPagina = paginaAtual.getPdfObject();
@@ -571,8 +562,8 @@ public void manipularPdf(String caminhoOriginal, String caminhoDestino) {
                 ));
             }
             String rodapeHtml = "<hr/><div style=\"float:left\"><img style=\"float: left\" width=\"75\" src=\"data:image/jpeg;base64,"
-                    + UtilitarioGeral.gerarQRCodeBase64("https://site.com") + "\" />"
-                    + "<p>Diário oficial assinado digitalmente de acordo com o ICP - Brasil. Para validar acesse o site: <span style=\"color:#0000ff\">https://site.com/validar</span></p></div>"
+                    + UtilitarioGeral.gerarQRCodeBase64("https://papiro.org") + "\" />"
+                    + "<p>Diário oficial assinado digitalmente de acordo com o ICP - Brasil. Para validar acesse o site: <span style=\"color:#0000ff\">https://papiro.org/validar.xhtml</span></p></div>"
                     + "<div style=\"float:right\"><p>#PAGINA#/#TOTAL#</p></div>";
 
             documentoPdf.addEventHandler(PdfDocumentEvent.END_PAGE, new Rodape(rodapeHtml, null));
