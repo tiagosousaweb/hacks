@@ -572,3 +572,8 @@ public void manipularPdf(String caminhoOriginal, String caminhoDestino) {
         }
     }
 ```
+## Colocar a saída de um comando para o log:
+```
+COMANDO AQUI >> /tmp/logScript.log 2>&1
+```
+Exemplo: pyhton3 /opt/script.py >> /tmp/logScript.log 2>&1
