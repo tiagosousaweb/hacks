@@ -487,5 +487,5 @@ COMANDO AQUI >> /tmp/logScript.log 2>&1
 Exemplo: pyhton3 /opt/script.py >> /tmp/logScript.log 2>&1
 ## Saber tamanho da pasta no Linux
 ```
-du -sh /opt/backup-papiro
+du -sh /opt/
 ```
