@@ -489,3 +489,8 @@ Exemplo: pyhton3 /opt/script.py >> /tmp/logScript.log 2>&1
 ```
 du -sh /opt/
 ```
+## Contar número de páginas pdf usando iText
+```
+PdfDocument pdfPaginas = new PdfDocument(new PdfReader(new File(caminhoCompleto)));
+pdfPaginas.getNumberOfPages()
+```
