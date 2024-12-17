@@ -494,3 +494,7 @@ du -sh /opt/
 PdfDocument pdfPaginas = new PdfDocument(new PdfReader(new File(caminhoCompleto)));
 pdfPaginas.getNumberOfPages()
 ```
+## Remover cache do Maven
+```
+rm -rf ~/.m2
+```
