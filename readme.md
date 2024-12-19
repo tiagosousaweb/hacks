@@ -498,3 +498,7 @@ pdfPaginas.getNumberOfPages()
 ```
 rm -rf ~/.m2
 ```
+## Buscar arquivo no Ubuntu
+```
+sudo find / -type f -iname "Arquivo.pdf"
+```
