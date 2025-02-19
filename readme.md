@@ -547,3 +547,7 @@ sudo systemctl stop docker && sudo systemctl disable docker && sudo systemctl st
 ```
 sudo apt  install curl; curl -s "https://get.sdkman.io" | bash; sdk install java 21.0.6-zulu
 ```
+## Instalar Apache + PHP
+```
+sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+```
