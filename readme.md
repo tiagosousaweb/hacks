@@ -32,7 +32,6 @@ sudo systemctl start postgresql@12-main
 ```
 
 ## Alterar senha master PostgreSql 12
-*Logar como sudo no postgres*
 ```
 sudo passwd postgres
 ```
