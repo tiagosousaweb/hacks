@@ -28,7 +28,7 @@ sudo pg_createcluster 12 main --start
 ```
 Iniciar o Postgresql:
 ```
-pg_ctlcluster 12 main start
+sudo pg_ctlcluster 12 main start
 ```
 ou
 ```
