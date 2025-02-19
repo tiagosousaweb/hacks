@@ -22,9 +22,13 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 *Só copiar e colar no terminal*
 
 ## Start database server PostgreSql
+```
+sudo systemctl start postgresql
+```
+ou
 
 ```
-sudo pg_ctlcluster 12 main start
+sudo pg_createcluster 12 main --start
 ```
 ou
 ```
