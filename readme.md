@@ -13,7 +13,7 @@ WHERE
 DROP DATABASE testdb1;
 ```
 
-## Instalar PostgreSql 12 no Linux
+## Instalar PostgreSQL 12 no Linux
 
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -; sudo apt-get update -u; sudo apt-get -y install postgresql-12
@@ -21,21 +21,21 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 
 *Só copiar e colar no terminal*
 
-## Start database server PostgreSql
-```
-sudo systemctl start postgresql
-```
-ou
-
+## Start database server PostgreSQL
+Criar o clister:
 ```
 sudo pg_createcluster 12 main --start
+```
+Iniciar o Postgresql:
+```
+pg_ctlcluster 12 main start
 ```
 ou
 ```
 sudo systemctl start postgresql@12-main
 ```
 
-## Alterar senha master PostgreSql 12
+## Alterar senha master PostgreSQL 12
 ```
 sudo passwd postgres
 ```
@@ -45,7 +45,7 @@ su postgres
 ```
 *logar com a senha alterada anteriormente*
 
-## Alterar senha de conexão PostgreSql 12
+## Alterar senha de conexão PostgreSQL
 
 ```
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
