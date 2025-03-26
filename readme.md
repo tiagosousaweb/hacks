@@ -551,3 +551,7 @@ sudo apt  install curl; curl -s "https://get.sdkman.io" | bash; sdk install java
 ```
 sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
 ```
+## Rodar projeto Quarkus passando o path javahome
+```
+JAVA_HOME=/opt/21.0.6-zulu quarkus run &
+```
