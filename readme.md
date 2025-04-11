@@ -555,7 +555,7 @@ sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php
 ```
 JAVA_HOME=/opt/21.0.6-zulu quarkus run &
 ```
-# Recriar Imagem Dicker
+# Recriar Imagem Docker
 sudo docker build -t NOME .
 
 # Rodar a imagem
