@@ -555,3 +555,14 @@ sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php
 ```
 JAVA_HOME=/opt/21.0.6-zulu quarkus run &
 ```
+# Recriar Imagem Dicker
+sudo docker build -t NOME .
+
+# Rodar a imagem
+sudo docker run -d -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
+
+# Rodar e monitorar log
+sudo docker run -it --rm -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
+
+# Navegar pelos diretórios da imagem
+sudo docker run -it --entrypoint /bin/bash NOME
