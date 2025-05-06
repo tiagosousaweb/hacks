@@ -556,13 +556,36 @@ sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php
 JAVA_HOME=/opt/21.0.6-zulu quarkus run &
 ```
 # Recriar Imagem Docker
+```
 sudo docker build -t NOME .
+```
 
 # Rodar a imagem
+```
 sudo docker run -d -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
+```
 
 # Rodar e monitorar log
+```
 sudo docker run -it --rm -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
+```
 
 # Navegar pelos diretórios da imagem
+```
 sudo docker run -it --entrypoint /bin/bash NOME
+```
+
+# Listar dispositivos USB
+```
+lsblk
+```
+
+# Formatar
+
+mkfs.ext4 /dev/sda1 – formata em EXT4
+
+mkfs.vfat /dev/sda1 – para FAT32 (pendrives)
+
+mkfs.ntfs /dev/sda1 – para NTFS
+
+Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
