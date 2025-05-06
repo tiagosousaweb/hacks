@@ -592,3 +592,5 @@ mkfs.ntfs /dev/sda1 – para NTFS
 
 Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 
+## Forçar formatação
+sudo mkfs.ntfs -f /dev/sda2
