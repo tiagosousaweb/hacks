@@ -582,6 +582,8 @@ lsblk
 
 ## Formatar dispositivo
 
+umount /dev/sda1 - Desmontar dispositivo
+
 mkfs.ext4 /dev/sda1 – formata em EXT4
 
 mkfs.vfat /dev/sda1 – para FAT32 (pendrives)
@@ -589,3 +591,4 @@ mkfs.vfat /dev/sda1 – para FAT32 (pendrives)
 mkfs.ntfs /dev/sda1 – para NTFS
 
 Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
+
