@@ -607,3 +607,12 @@ sudo docker rm $(sudo docker ps -a -q)
 ```
 sudo docker rmi $(sudo docker images -q)
 ```
+## Listar servicços ativos no Swarm
+```
+sudo docker service ls
+```
+## Remover os serviços que estão recriando os containers
+```
+sudo docker service rm NOME
+sudo docker service rm NOME
+```
