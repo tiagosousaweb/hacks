@@ -594,3 +594,16 @@ Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 
 ## Forçar formatação
 sudo mkfs.ntfs -f /dev/sda2
+
+## Parar todos os containers Docker
+```
+sudo docker stop $(sudo docker ps -q)
+```
+## Remover todos os containers
+```
+sudo docker rm $(sudo docker ps -a -q)
+```
+## Remover todas as imagens
+```
+sudo docker rmi $(sudo docker images -q)
+```
