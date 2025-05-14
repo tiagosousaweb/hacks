@@ -616,3 +616,7 @@ sudo docker service ls
 sudo docker service rm NOME
 sudo docker service rm NOME
 ```
+## Parar todos de uma vez
+```
+sudo docker service rm $(docker service ls -q)
+```
