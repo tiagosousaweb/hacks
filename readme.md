@@ -555,26 +555,6 @@ sudo apt update && sudo apt install apache2 php libapache2-mod-php php-mysql php
 ```
 JAVA_HOME=/opt/21.0.6-zulu quarkus run &
 ```
-## Recriar Imagem Docker
-```
-sudo docker build -t NOME .
-```
-
-## Rodar a imagem
-```
-sudo docker run -d -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
-```
-
-## Rodar e monitorar log
-```
-sudo docker run -it --rm -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
-```
-
-## Navegar pelos diretórios da imagem
-```
-sudo docker run -it --entrypoint /bin/bash NOME
-```
-
 ## Listar dispositivos USB
 ```
 lsblk
@@ -594,29 +574,3 @@ Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 
 ## Forçar formatação
 sudo mkfs.ntfs -f /dev/sda2
-
-## Parar todos os containers Docker
-```
-sudo docker stop $(sudo docker ps -q)
-```
-## Remover todos os containers
-```
-sudo docker rm $(sudo docker ps -a -q)
-```
-## Remover todas as imagens
-```
-sudo docker rmi $(sudo docker images -q)
-```
-## Listar servicços ativos no Swarm
-```
-sudo docker service ls
-```
-## Remover os serviços que estão recriando os containers
-```
-sudo docker service rm NOME
-sudo docker service rm NOME
-```
-## Parar todos de uma vez
-```
-sudo docker service rm $(docker service ls -q)
-```
