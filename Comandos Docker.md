@@ -75,5 +75,5 @@ docker run -it --rm NOME /bin/sh
 
 # Apagar todas as imagens e todos os containers
 ```
-sudo docker rm -f $(sudo docker ps -aq) && sudo docker rmi -f $(sudo docker images -aq)
+sudo docker rm -f $(sudo docker ps -aq) ; sudo docker rmi -f $(sudo docker images -aq)
 ```
