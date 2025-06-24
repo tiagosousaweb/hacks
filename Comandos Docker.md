@@ -14,16 +14,6 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo docker run hello-world
 ```
 
-# Exportar imagem .tar
-```
-sudo docker save -o arquivo.tar NOME
-```
-
-# Restaurar a imagem
-```
-sudo docker load -i arquivo.tar
-```
-
 # Recriar Imagem Docker
 ```
 sudo docker build -t NOME .
@@ -32,6 +22,16 @@ sudo docker build -t NOME .
 # Recriar sem cache
 ```
 sudo docker build --no-cache -t NOME .
+```
+
+# Exportar imagem .tar
+```
+sudo docker save -o arquivo.tar NOME
+```
+
+# Restaurar a imagem
+```
+sudo docker load -i arquivo.tar
 ```
 
 # Rodar a imagem
