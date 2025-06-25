@@ -40,7 +40,7 @@ sudo systemctl start postgresql@12-main
 ```
 sudo passwd postgres
 ```
-*informe a nova senha*
+## Entrar nas configurações so postgre
 ```
 su postgres
 ```
