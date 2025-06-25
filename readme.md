@@ -47,11 +47,13 @@ su postgres
 *logar com a senha alterada anteriormente*
 
 ## Alterar senha de conexão PostgreSQL
-
 ```
 psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
-
+## Permitir conexões no postgre por qualquer IP
+```
+host    NOME_BANCO        postgres        0.0.0.0/0               md5
+```
 ## Limpar cache do Git para fazer funcionar o gitignore
 ```
 git rm -r --cached . && git add . && git commit -m ".gitignore fix"
