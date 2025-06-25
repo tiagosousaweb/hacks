@@ -23,6 +23,10 @@ sudo docker build -t NOME .
 ```
 sudo docker build --no-cache -t NOME .
 ```
+# Fazer commit da imagem para uma nova imagem (para casos de alterações dentro de um container)
+```
+docker commit NOME NOVO_NOME
+```
 
 # Exportar imagem .tar
 ```
