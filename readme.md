@@ -577,3 +577,8 @@ Apagar tudo - sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 
 ## Forçar formatação
 sudo mkfs.ntfs -f /dev/sda2
+## Dividir PDF usando o terminal do Ubuntu
+```
+qpdf /opt/arquivo.pdf --pages . 1-10 -- /opt/arquivo_parte1.pdf
+qpdf /opt/arquivo.pdf --pages . 11-20 -- /opt/arquivo_parte2.pdf
+```
