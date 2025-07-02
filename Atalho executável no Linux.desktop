@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=/opt/script.sh
-Icon=dialog-scripts
-Name=script.sh
-Path=
-Type=Application
-X-KDE-AutostartScript=true
