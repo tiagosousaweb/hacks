@@ -582,3 +582,7 @@ sudo mkfs.ntfs -f /dev/sda2
 qpdf /opt/arquivo.pdf --pages . 1-10 -- /opt/arquivo_parte1.pdf
 qpdf /opt/arquivo.pdf --pages . 11-20 -- /opt/arquivo_parte2.pdf
 ```
+## Alterar fuso horário postgre
+```
+ALTER DATABASE postgres SET TIMEZONE TO 'America/Sao_Paulo';
+```
