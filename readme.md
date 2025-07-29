@@ -36,11 +36,11 @@ ou
 sudo systemctl start postgresql@12-main
 ```
 
-## Alterar senha master PostgreSQL 12
+## Alterar senha master PostgreSQL
 ```
 sudo passwd postgres
 ```
-## Entrar nas configurações so postgre
+## Entrar nas configurações do Postgre
 ```
 su postgres
 ```
@@ -52,8 +52,22 @@ psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
 ## Permitir conexões no postgre por qualquer IP
 ```
-host    NOME_BANCO        postgres        0.0.0.0/0               md5
+sudo nano /etc/postgresql/17/main/pg_hba.conf
 ```
+
+Substituir:
+listen_addresses = 'localhost'
+por
+listen_addresses = '*'
+```
+sudo nano /etc/postgresql/17/main/pg_hba.conf
+```
+
+Colocar no final:
+```
+host    all             postgres        0.0.0.0/0               md5
+```
+
 ## Limpar cache do Git para fazer funcionar o gitignore
 ```
 git rm -r --cached . && git add . && git commit -m ".gitignore fix"
