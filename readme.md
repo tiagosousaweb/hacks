@@ -600,3 +600,7 @@ qpdf /opt/arquivo.pdf --pages . 11-20 -- /opt/arquivo_parte2.pdf
 ```
 ALTER DATABASE postgres SET TIMEZONE TO 'America/Sao_Paulo';
 ```
+## Remover NGINX e configurações
+```
+sudo systemctl stop nginx; sudo systemctl disable nginx; sudo apt remove --purge nginx nginx-common nginx-core -y; sudo apt autoremove -y; sudo rm -rf /etc/nginx; sudo rm -rf /var/log/nginx;sudo rm -rf /var/lib/nginx
+```
