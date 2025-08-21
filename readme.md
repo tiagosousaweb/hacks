@@ -449,6 +449,11 @@ sudo PGPASSWORD="SENHA" pg_dump -U postgres -h localhost -p 5432 -d normas -Fc >
 ## Remove backups mais antigos que 7 dias
 find /opt/PASTA_BACKUP/ -name "*.dump" -type f -mtime +7 -exec rm {} \;
 ```
+## Exemplo de chamada no Crontab ()
+```
+TZ=America/Sao_Paulo
+0 0,4,8,12,16,20 * * * /opt/executar-backup.sh
+```
 ## Listas os 10 maiores PDF's em número de páginas
 ```
 find . -type f -name "*.pdf" -exec sh -c 'pdfinfo "$1" | grep "^Pages:" | awk "{print \$2, \"$1\"}"' _ {} \; | sort -nr | head -n 10
