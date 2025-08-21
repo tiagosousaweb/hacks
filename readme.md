@@ -418,7 +418,7 @@ unrtf --html arquivo.rtf > arquivo.html
 ## Fazer backup database Postgresql:
 Salvar o backup da base 'backup' na pasta /opt/backup_customizado.dump 
 ```
-pg_dump -U postgres -h localhost -p 5432 -d backup -Fc > backup_customizado.dump
+pg_dump -U usuario -h localhost -p 5432 -d nome_do_banco -Fc > backup_customizado.dump
 ```
 Se quiser apontar pra uma versão específica do pg_dump:
 ```
@@ -430,7 +430,7 @@ Você verá algo como:
 ```
 Aponte para a versão desejada:
 ```
-/usr/lib/postgresql/16/bin/pg_dump -U postgres -h localhost -p 5432 -d nome_do_banco -Fc > /opt/backup_customizado.dump
+/usr/lib/postgresql/16/bin/pg_dump -U usuario -h localhost -p 5432 -d nome_do_banco -Fc > /opt/backup_customizado.dump
 ```
 Para usar o usuário root caso não seja possível autenticar com o usuário postgres:
 ```
