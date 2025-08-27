@@ -16,12 +16,12 @@ sudo docker run hello-world
 
 # Recriar Imagem Docker
 ```
-sudo docker build -t NOME .
+sudo docker build -t NOME_IMAGEM .
 ```
 
 # Recriar sem cache
 ```
-sudo docker build --no-cache -t NOME .
+sudo docker build --no-cache -t NOME_IMAGEM .
 ```
 # Fazer commit da imagem para uma nova imagem (para casos de alterações dentro de um container)
 ```
@@ -30,7 +30,7 @@ docker commit NOME NOVO_NOME
 
 # Exportar imagem .tar
 ```
-sudo docker save -o arquivo.tar NOME
+sudo docker save -o arquivo.tar NOME_IMAGEM
 ```
 
 # Restaurar a imagem
