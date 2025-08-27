@@ -609,3 +609,7 @@ ALTER DATABASE postgres SET TIMEZONE TO 'America/Sao_Paulo';
 ```
 sudo systemctl stop nginx; sudo systemctl disable nginx; sudo apt remove --purge nginx nginx-common nginx-core -y; sudo apt autoremove -y; sudo rm -rf /etc/nginx; sudo rm -rf /var/log/nginx;sudo rm -rf /var/lib/nginx
 ```
+## Matar todos os processos do Java
+```
+sudo kill -9 $(ps aux | grep java | awk '{print $2}')
+```
