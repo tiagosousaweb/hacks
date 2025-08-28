@@ -613,3 +613,7 @@ sudo systemctl stop nginx; sudo systemctl disable nginx; sudo apt remove --purge
 ```
 sudo kill -9 $(ps aux | grep java | awk '{print $2}')
 ```
+## Compilar projeto Quarkus pra rodar nativo
+```
+sudo ./mvnw clean package -Pnative -Dquarkus.native.container-build=true
+```
