@@ -306,9 +306,9 @@ ou
 sudo find / -type f -iname "ARQUIVO.pdf"
 ```
 
-## Listar arquivos maiores que 500MB no Terminal do Linux
+## Listar os 10 maiores arquivos no Linux
 ```
-sudo find / -type f -size +500M -exec ls -lh {} \;
+echo -e "TAMANHO\tARQUIVO" && find / -type f -exec du -h {} + 2>/dev/null | sort -hr | head -10 | awk '{size=$1; $1=""; printf "%-8s\t%s\n", size, substr($0,2)}'
 ```
 ## Ver config do TeamViwer pelo terminal
 Ver o ID do teamviewer
