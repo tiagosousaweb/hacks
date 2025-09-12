@@ -444,7 +444,7 @@ sudo -u postgres /usr/lib/postgresql/16/bin/pg_restore -U postgres -d nome_do_ba
 ```
 #!/bin/bash
 ## Cria um backup com data e hora
-sudo PGPASSWORD="SENHA" pg_dump -U postgres -h localhost -p 5432 -d normas -Fc > /opt/PASTA_BACKUP/backup_$(date +%d-%m-%Y_%H-%M-%S).dump
+sudo PGPASSWORD="SENHA" pg_dump -U postgres -h localhost -p 5432 -d normas -Fc > /opt/PASTA_BACKUP/backup_$(date +%d-%m-%Y_%H-%M).dump
 
 ## Remove backups mais antigos que 7 dias
 find /opt/PASTA_BACKUP/ -name "*.dump" -type f -mtime +7 -exec rm {} \;
