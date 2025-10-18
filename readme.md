@@ -16,24 +16,24 @@ DROP DATABASE testdb1;
 ## Instalar PostgreSQL 12 no Linux
 
 ```
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -; sudo apt-get update -u; sudo apt-get -y install postgresql-12
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -; sudo apt-get update -u; sudo apt-get -y install postgresql-17
 ```
-Para instalar o 17 basta mudar o 12 por 17
+Para instalar o 12 basta mudar o 17 por 12
 
 *Só copiar e colar no terminal*
 
 ## Start database server PostgreSQL
 Criar o cluster:
 ```
-sudo pg_createcluster 12 main --start
+sudo pg_createcluster 17 main --start
 ```
 Iniciar o Postgresql:
 ```
-sudo pg_ctlcluster 12 main start
+sudo pg_ctlcluster 17 main start
 ```
 ou
 ```
-sudo systemctl start postgresql@12-main
+sudo systemctl start postgresql@17-main
 ```
 
 ## Alterar senha master PostgreSQL
