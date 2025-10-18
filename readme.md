@@ -52,16 +52,13 @@ psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d template1
 ```
 ## Permitir conexões no postgre por qualquer IP
 ```
-sudo nano /etc/postgresql/*/main/postgresql.conf
+sudo nano /etc/postgresql/17/main/pg_hba.conf
 ```
 
 Substituir:
 listen_addresses = 'localhost'
 por
 listen_addresses = '*'
-```
-sudo nano /etc/postgresql/17/main/pg_hba.conf
-```
 
 Colocar no final:
 ```
