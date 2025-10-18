@@ -69,6 +69,10 @@ Colocar no final:
 ```
 host    all             postgres        0.0.0.0/0               md5
 ```
+Reiniciar Postgresql
+```
+sudo systemctl restart postgresql
+```
 
 ## Limpar cache do Git para fazer funcionar o gitignore
 ```
