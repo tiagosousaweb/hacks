@@ -38,6 +38,7 @@ sudo docker save -o arquivo.tar NOME_IMAGEM
 sudo docker load -i arquivo.tar
 ```
 
+
 # Rodar a imagem
 # Sem passar nome do banco
 ```
@@ -57,6 +58,20 @@ sudo docker logs -f NOME
 # Rodar e monitorar log
 ```
 sudo docker run -it --rm -p 7000:7000 --add-host=host.docker.internal:host-gateway NOME
+```
+# Atualiza imagens remotas declaradas em image:
+```
+docker compose pull
+```
+
+# Rebuilda serviços com build: ignorando cache
+```
+docker compose build --no-cache
+```
+
+# Sobe containers
+```
+docker compose up -d
 ```
 
 # Navegar pelos diretórios de um container que já está rodando
