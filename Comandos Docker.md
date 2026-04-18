@@ -98,8 +98,6 @@ sudo docker rm -f $(sudo docker ps -aq) ; sudo docker rmi -f $(sudo docker image
 ```
 # Apagar bancos de dados e volumes
 ```
-sudo docker rm -f $(sudo docker ps -aq)
-sudo docker rmi -f $(sudo docker images -aq)
 sudo docker volume rm $(sudo docker volume ls -q)
 ```
 # Apagar tudo de Docker
