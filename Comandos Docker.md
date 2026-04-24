@@ -91,7 +91,13 @@ ou
 ```
 docker run -it --rm NOME /bin/sh
 ```
-
+# Apagar quando tiver um docker-compose.yml no projeto
+```
+docker compose down          # Para containers + remove networks
+docker compose down -v       # + apaga volumes (dados)
+docker compose down --rmi all  # + apaga as imagens
+docker compose down -v --rmi all  # Apaga tudo
+```
 # Apagar todas as imagens e todos os containers
 ```
 sudo docker rm -f $(sudo docker ps -aq) ; sudo docker rmi -f $(sudo docker images -aq)
